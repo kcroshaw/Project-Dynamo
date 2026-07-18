@@ -1,0 +1,95 @@
+{
+    "id": "7e8148ef-b6eb-44c1-a829-e1bbef03fc17",
+    "task_name": "dynamo/log-report",
+    "trial_name": "log-report__WV5Cjz3",
+    "trial_uri": "file:///Users/kolbycroshaw/Desktop/Project/jobs/2026-07-18__00-34-00/log-report__WV5Cjz3",
+    "task_id": {
+        "path": "log-report"
+    },
+    "source": null,
+    "task_checksum": "334f2f1dfe624991fb257214d783f9be8418dbfe46fd99599ecb67788b17eb27",
+    "config": {
+        "task": {
+            "path": "log-report",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "log-report__WV5Cjz3",
+        "trials_dir": "jobs/2026-07-18__00-34-00",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "oracle",
+            "import_path": null,
+            "model_name": null,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "job_id": "812cfaee-92eb-49bd-a4f5-3ea90b7b5859"
+    },
+    "agent_info": {
+        "name": "oracle",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "RuntimeError",
+        "exception_message": "Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__wv5cjz3__env --project-directory /Users/kolbycroshaw/Desktop/Project/log-report/environment -f /private/var/folders/6g/k29wf5_s4j5bbd_pj2gcz73m0000gn/T/tmpbt9q_yis/log-report__WV5Cjz3__env-docker-compose-resources.json -f /Users/kolbycroshaw/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /private/var/folders/6g/k29wf5_s4j5bbd_pj2gcz73m0000gn/T/tmpihsx48g7/docker-compose-environment.json -f /private/var/folders/6g/k29wf5_s4j5bbd_pj2gcz73m0000gn/T/tmpzk1qt7rh/docker-compose-mounts.json build. Return code: 1. Stdout:  Image log-report__wv5cjz3__env-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 594B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile\n#2 transferring dockerfile: 219B 0.0s done\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/python:latest\n#3 ERROR: DeadlineExceeded: context deadline exceeded\n------\n > [internal] load metadata for docker.io/library/python:latest:\n------\nDockerfile:1\n\n--------------------\n\n   1 | >>> FROM python:latest\n\n   2 |     \n\n   3 |     RUN pip install --no-cache-dir pytest==8.4.1 pytest-json-ctrf==0.3.5\n\n--------------------\n\nfailed to solve: DeadlineExceeded: context deadline exceeded\n\n. Stderr: None. ",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/Users/kolbycroshaw/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py\", line 350, in run\n    await self._prepare()\n  File \"/Users/kolbycroshaw/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py\", line 379, in _prepare\n    await self._setup_agent_environment()\n  File \"/Users/kolbycroshaw/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py\", line 1099, in _setup_agent_environment\n    await self._start_agent_environment()\n  File \"/Users/kolbycroshaw/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py\", line 1105, in _start_agent_environment\n    await asyncio.wait_for(\n    ...<4 lines>...\n    )\n  File \"/Users/kolbycroshaw/.local/share/uv/python/cpython-3.13.14-macos-aarch64-none/lib/python3.13/asyncio/tasks.py\", line 507, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/Users/kolbycroshaw/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py\", line 891, in start\n    await self._run_docker_compose_command([\"build\"])\n  File \"/Users/kolbycroshaw/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py\", line 656, in _run_docker_compose_command\n    raise RuntimeError(\n    ...<5 lines>...\n    )\nRuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__wv5cjz3__env --project-directory /Users/kolbycroshaw/Desktop/Project/log-report/environment -f /private/var/folders/6g/k29wf5_s4j5bbd_pj2gcz73m0000gn/T/tmpbt9q_yis/log-report__WV5Cjz3__env-docker-compose-resources.json -f /Users/kolbycroshaw/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /private/var/folders/6g/k29wf5_s4j5bbd_pj2gcz73m0000gn/T/tmpihsx48g7/docker-compose-environment.json -f /private/var/folders/6g/k29wf5_s4j5bbd_pj2gcz73m0000gn/T/tmpzk1qt7rh/docker-compose-mounts.json build. Return code: 1. Stdout:  Image log-report__wv5cjz3__env-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 594B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile\n#2 transferring dockerfile: 219B 0.0s done\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/python:latest\n#3 ERROR: DeadlineExceeded: context deadline exceeded\n------\n > [internal] load metadata for docker.io/library/python:latest:\n------\nDockerfile:1\n\n--------------------\n\n   1 | >>> FROM python:latest\n\n   2 |     \n\n   3 |     RUN pip install --no-cache-dir pytest==8.4.1 pytest-json-ctrf==0.3.5\n\n--------------------\n\nfailed to solve: DeadlineExceeded: context deadline exceeded\n\n. Stderr: None. \n",
+        "occurred_at": "2026-07-18T00:35:05.004621"
+    },
+    "started_at": "2026-07-18T06:34:01.791095Z",
+    "finished_at": "2026-07-18T06:35:06.375624Z",
+    "environment_setup": {
+        "started_at": "2026-07-18T06:34:01.860235Z",
+        "finished_at": "2026-07-18T06:35:04.994072Z"
+    },
+    "agent_setup": null,
+    "agent_execution": null,
+    "verifier": null,
+    "step_results": null
+}
